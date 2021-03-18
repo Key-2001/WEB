@@ -38,6 +38,7 @@ export const ButtonGoto = styled.button`
     border: solid 1px #000;
     background-color:#fff;
     color:#000;
+    cursor:pointer;
 `;
 export const Select = styled.select`
     margin-right: 2em;

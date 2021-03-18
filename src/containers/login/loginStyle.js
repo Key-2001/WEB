@@ -63,6 +63,7 @@ export const Button = styled.button`
     border-radius: 0.35em;
     outline: none;
     color:#fff;
+    cursor:pointer;
 `;
 
 export const Blank = styled.div`

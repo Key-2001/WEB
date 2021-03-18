@@ -10,7 +10,6 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      keyWord:'',
     }
   }
 
@@ -18,9 +17,9 @@ class Header extends Component {
     return (
         <Wrapper>
             <InputSearch
-                value={this.state.keyWord}
+                value={this.props.keyWord}
                 text="text"
-                onChange={(event)=>this.setState({keyWord:this.state.onChange})}
+                onChange={(event)=>this.props.searchOnChange(event)}
                 placeholder="Search.."
             />
             <ButtonGoto>Go to</ButtonGoto>

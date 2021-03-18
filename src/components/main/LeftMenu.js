@@ -2,8 +2,7 @@ import React , { Component } from 'react';
 import {
     Wrapper,Avatar,TextField,Blank,ButtonLogout,
 } from './leftMenuStyle'
-import Img from '../../asset/img/avatarDefault.jpg'
-import Avatarr from'../../asset/img/Avatar.jpg'
+import Img from '../../asset/Img'
 
 class LeftMenu extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class LeftMenu extends Component {
   render() {
     return (
         <Wrapper id="LeftMenu">
-            <Avatar src={Img} alt="AvatarDefault"/>
+            <Avatar src={Img.avatarDefault} alt="AvatarDefault"/>
             <TextField>UserName</TextField>
             <TextField>Point: 2430</TextField>
             <TextField>Test complete: 29</TextField>
