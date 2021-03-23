@@ -1,28 +1,56 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    width:33.33333%;
-    background-color: gray;
+    width: 14em;
+    margin-right: 1em;
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    border: gray 1px solid;
     display: flex;
+    flex-direction: row;
+    margin-right:auto;
+    margin-left:auto;
+`;
+
+export const Column = styled.div`
+    width: ${props=> props.width};
+    display: flex;
+    font-weight: 500;
     flex-direction: column;
-    align-items: flex-start;
-    box-sizing: border-box;
-    margin: 1em 0.5em;
-    border: 1px solid #000;
-    border-radius: 0.2em;
-    font-size:0.8em;
-    padding: 0.6em;
 `;
 
 export const Row = styled.div`
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     font-weight: 400;
-    font-size: 0.8em;
-    
+    margin-left: 0.5em;
+    font-size: 0.9em;
+    color: #000;
 `;
 
 export const TitleField = styled.div`
-    padding-right: 0.5em;
-    font-size: 1em;
     font-weight: bold;
+    margin-right: 0.5em;
+    font-size: 0.9em;
+`;
+export const Checkbox = styled.input`
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 0.6em;
+`; 
+export const ButtonStart = styled.button`
+    margin-right: 0.5em;
+    height: 2.5em;
+    border: 1px solid #000;
+    border-radius: 0.2em;
+    cursor: pointer;
+    font-size: 0.6em;
+    font-weight: bold;
+    background-color: #fff;
+`;
+
+export const StarIcon = styled.img`
+    width: 1em;
+    margin-left: 0.25em;
 `;

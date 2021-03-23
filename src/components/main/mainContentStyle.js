@@ -9,19 +9,23 @@ export const Wrapper = styled.div`
     justify-content: flex-start;//can le
     align-items: center;//can cao
     flex-direction: column;//can dong
-    background: #ccc;
+    background-color: #fff;
     flex:1;
     box-sizing:border-box;
+    
 `;
 export const Blank = styled.div`
   flex: 1;
 `;
 export const WrapperTest = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  font-weight: bold;
-  background-color: red;
-  width:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    
+    
 `;
