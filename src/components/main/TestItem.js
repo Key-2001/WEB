@@ -3,7 +3,7 @@ import{
   TitleField,
   Wrapper, Row, Column, Checkbox, ButtonStart, StarIcon
 } from './testItemStyle'
-import Img from'../../asset/Img'
+import Img from'../../asset/img'
 
 
 class TestItem extends Component {
@@ -61,7 +61,16 @@ class TestItem extends Component {
              
             </Column>
             <Column width="30%">
-                 <ButtonStart>Start</ButtonStart>
+                 <ButtonStart onClick={()=>{
+                   console.log("click start",this.props.id)
+                   window.localStorage.setItem('exampleId',this.props.id)
+                   window.localStorage.setItem('exampleName',this.props.name)
+                   window.localStorage.setItem('examplePoint',this.props.point)
+                   window.localStorage.setItem('exampleTime',this.props.time)
+                   window.localStorage.setItem('exampleDiff',this.props.diff)
+              
+                   window.location.href='/test';
+                 }}>Start</ButtonStart>
             </Column>
         </Wrapper>
     )

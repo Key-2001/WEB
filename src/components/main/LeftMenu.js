@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import {
     Wrapper,Avatar,TextField,Blank,ButtonLogout,
 } from './leftMenuStyle'
-import Img from '../../asset/Img'
+import Img from '../../asset/img'
 
 class LeftMenu extends Component {
   constructor(props) {

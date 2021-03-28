@@ -1,9 +1,18 @@
 import styled from 'styled-components';
 
+export const Wrapper_plus = styled.div`
+    width: 100%;
+    background-color: #ccc;
+    padding: 1em 0;
+    position: fixed;
+    box-sizing: border-box;
+    margin-left: -8px;
+`;
+
+
 export const Wrapper = styled.div`
     width: 30%;
-    margin-right: 1em;
-    margin-top: 1em;
+    background-color: #fff;
     padding: 0.5em;
     border-radius: 0.3em;
     border: gray 1px solid;

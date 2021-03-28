@@ -2,6 +2,7 @@ import React , { Component } from 'react';
 import styled from 'styled-components';
 import MainContent from '../../components/main/MainContent'
 import LeftMenu from '../../components/main/LeftMenu'
+import api from '../../services/api'
 
 export const Wrapper = styled.div`
     width: 100vw;
@@ -31,37 +32,18 @@ class Main extends Component {
     super(props);
     this.state = {
       keyWord:'',
-      testData: [
-        {
-          name: "Test 1",
-          point: 30,
-          time: 30,
-          diff: DIFFCULT.one,
-          past: false,
-        },
-        {
-          name: "Test 2",
-          point: 30,
-          time: 30,
-          diff: DIFFCULT.three,
-          past: true,
-        },
-        {
-          name: "Test 3",
-          point: 30,
-          time: 30,
-          diff: DIFFCULT.five,
-          past: false,
-        },{
-          name: "Test 3",
-          point: 30,
-          time: 30,
-          diff: DIFFCULT.four,
-          past: true,
-        }
-      ],
+      testData: [],
+      currentPage:1,
+      totalExample:0,
+
     }
   }
+  componentDidMount(){
+    console.log('componentDidMount')
+    this.changePage(1)
+  }
+
+
   searchOnChange(event) {
     console.log("nhan dc",event.target.value)
     this.setState({keyWord: event.target.value})
@@ -76,6 +58,22 @@ class Main extends Component {
     }
     return result;
   }
+  changePage(page){
+    api.create().getListExample(page)
+    .then(response => {
+        //const { data } = response;
+       console.log('data',response)
+       this.setState({testData: response.data.data,
+                      currentPage:response.data.currentPage,
+                      totalExample:response.data.total
+      });
+
+    })
+    .catch((error) => {
+      //const { message } = error;
+      console.log('error: ', error);
+    });
+  }
 
   render() {
     return (
@@ -85,6 +83,9 @@ class Main extends Component {
           data = {this.filterKeyword(this.state.testData, this.state.keyWord)}
           keyWord={this.state.keyWord}
           searchOnChange={(e) => this.searchOnChange(e)}
+          currentPage={this.state.currentPage}
+          total={this.state.totalExample}
+          changePage={(pageNumber)=>this.changePage(pageNumber)}
         />
       </Wrapper>
     )

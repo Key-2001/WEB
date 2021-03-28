@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     width:100%;
-    height:5em;
     color: #f4f6f6;
     font-size: 23px;
     font-weight: bold;
@@ -12,6 +11,8 @@ export const Wrapper = styled.div`
     flex-direction: row;//can dong
     background-color:#fff;
     border: solid 1px #000;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 `;
 
 export const InputSearch = styled.input`

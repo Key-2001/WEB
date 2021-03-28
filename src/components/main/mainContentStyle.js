@@ -22,8 +22,8 @@ export const WrapperTest = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     box-sizing: border-box;
     margin-bottom: 1em;
     

@@ -26,6 +26,7 @@ class MainContent extends Component {
           time ={this.props.data[i].time}
           diff ={this.props.data[i].diff}
           past ={this.props.data[i].past}
+          id={this.props.data[i].id}
         />
       )
       items.push(item);
@@ -38,6 +39,7 @@ class MainContent extends Component {
   }
 
   render() {
+    const totalPage = parseInt(this.props.total /10) +1;
     return (
         <Wrapper> 
           <Header
@@ -50,11 +52,17 @@ class MainContent extends Component {
             
             <Blank/>
             <Pagination
-              count={10}
+              count={totalPage}
+              page={this.props.currentPage}
               variant="outlined"
               shape="rounded"
               style={{
                 marginBottom: '1em',
+                
+              }}
+              onChange={(event,page)=>{
+                console.log('page = ',page)
+                this.props.changePage(page)
               }}
             />
         </Wrapper>
